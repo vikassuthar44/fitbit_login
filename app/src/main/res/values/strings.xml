@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FitBit</string>
+    <string name="app_title">fitbit</string>
+    <string name="no_internet_error">No Internet</string>
+    <string name="retry">Retry</string>
+    <string name="news_feed">News Feed</string>
+    <string name="sort_by">Sort by</string>
+    <string name="by_published_time">By Published time</string>
+    <string name="by_news_title">By News Title</string>
+    <string name="exit_msg">Are you sure you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="log_in">Log in</string>
+    <string name="join_fitbit">Join Fitbit</string>
+
+    <string name="manage_weight">Manage weight</string>
+
+    <string name="track_fitness">Track your Fitness, \nall day and night</string>
+    <string name="landing_title1">Get Active</string>
+    <string name="landing_title2">Eat Better</string>
+    <string name="landing_title3">Manage weight</string>
+    <string name="landing_title4">Sleep Better</string>
+    <string name="let_s_get_started">Let\'s get started</string>
+    <string name="password">Password</string>
+    <string name="enter_email_id_here">Enter email id here</string>
+    <string name="email">Email</string>
+    <string name="enter_password_here">Enter password here</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="edit">Edit</string>
+</resources>

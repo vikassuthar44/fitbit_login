@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/tenDp"
+            >
+
+            <ImageView
+                app:layout_constraintTop_toTopOf="@id/pageTitle"
+                app:layout_constraintBottom_toBottomOf="@id/pageTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_user_icon"
+                android:layout_marginStart="@dimen/tenDp"
+                android:background="@drawable/profile_bg"
+                android:padding="@dimen/fiveDp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="@dimen/fontTwentySp"
+                android:padding="@dimen/tenDp"
+                android:textColor="@color/black" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topview"
+            android:background="@android:color/darker_gray"/>
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topview"
+            android:layout_marginTop="@dimen/tenDp"
+            android:layout_marginStart="@dimen/tenDp"
+            android:padding="@dimen/tenDp"
+            android:background="?attr/selectableItemBackground"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/backArrow"
+            app:layout_constraintBottom_toBottomOf="@id/backArrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Today"
+            app:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fontSeventeenSp"/>
+
+        <ImageView
+            android:id="@+id/nextArrow"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_next_arrow"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintTop_toTopOf="@id/backArrow"
+            app:layout_constraintBottom_toBottomOf="@id/backArrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/tenDp"
+            android:padding="@dimen/tenDp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/backArrow"
+            app:layout_constraintBottom_toBottomOf="@id/backArrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/edit"
+            android:textColor="@color/appColor"
+            android:paddingStart="@dimen/fifteenDp"
+            android:paddingEnd="@dimen/fifteenDp"
+            android:paddingTop="@dimen/fiveDp"
+            android:paddingBottom="@dimen/fiveDp"
+            android:textAllCaps="false"
+            android:layout_marginEnd="@dimen/tenDp"
+            android:background="@drawable/button_edit_bg"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backArrow"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            android:background="#ededed"
+            android:layout_marginTop="@dimen/tenDp"
+            android:paddingTop="@dimen/tenDp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/centerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/progressview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    layout="@layout/progress_view"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_share_icon"
+                    android:layout_marginEnd="@dimen/twentyDp"
+                    android:layout_marginTop="@dimen/tenDp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/trackCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/progressview"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:elevation="@dimen/fiveDp"
+                    app:cardCornerRadius="@dimen/fiveDp"
+                    app:cardElevation="@dimen/fiveDp"
+                    android:layout_margin="@dimen/tenDp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/tenDp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/track_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_brain_icon"
+                        android:background="@drawable/card_bg"
+                        android:padding="@dimen/twelveDp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/trackTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Track your mindfulness"
+                        app:layout_constraintTop_toTopOf="@id/track_icon"
+                        app:layout_constraintStart_toEndOf="@id/track_icon"
+                        android:textSize="@dimen/fontSeventeenSp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 days left this week"
+                        app:layout_constraintBottom_toBottomOf="@id/track_icon"
+                        app:layout_constraintStart_toEndOf="@id/track_icon"
+                        android:textSize="@dimen/fontFifteenSp"
+                        app:layout_constraintTop_toBottomOf="@id/trackTitle"
+                        android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/track_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/track_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_icon"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/trackExerciseCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/trackCard"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:elevation="@dimen/fiveDp"
+                    app:cardCornerRadius="@dimen/fiveDp"
+                    app:cardElevation="@dimen/tenDp"
+                    android:layout_margin="@dimen/tenDp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/tenDp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:id="@+id/track_exercise_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_running"
+                            android:background="@drawable/card_bg"
+                            android:padding="@dimen/twelveDp"
+                            app:tint="#FF6347" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/trackExerciseTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Track your exercise"
+                            app:layout_constraintTop_toTopOf="@id/track_exercise_icon"
+                            app:layout_constraintStart_toEndOf="@id/track_exercise_icon"
+                            android:textSize="@dimen/fontSeventeenSp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5 days left this week"
+                            app:layout_constraintBottom_toBottomOf="@id/track_exercise_icon"
+                            app:layout_constraintStart_toEndOf="@id/track_exercise_icon"
+                            android:textSize="@dimen/fontFifteenSp"
+                            app:layout_constraintTop_toBottomOf="@id/trackExerciseTitle"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/track_exercise_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/track_exercise_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_icon"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/weightCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/trackExerciseCard"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:elevation="@dimen/fiveDp"
+                    app:cardCornerRadius="@dimen/fiveDp"
+                    app:cardElevation="@dimen/tenDp"
+                    android:layout_margin="@dimen/tenDp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/tenDp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:id="@+id/weight_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_weighing_scale"
+                            android:background="@drawable/card_bg"
+                            android:padding="@dimen/twelveDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/weightTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="68 kgs"
+                            app:layout_constraintTop_toTopOf="@id/weight_icon"
+                            app:layout_constraintStart_toEndOf="@id/weight_icon"
+                            android:textSize="@dimen/fontSeventeenSp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Set a weight goal"
+                            app:layout_constraintBottom_toBottomOf="@id/weight_icon"
+                            app:layout_constraintStart_toEndOf="@id/weight_icon"
+                            android:textSize="@dimen/fontFifteenSp"
+                            app:layout_constraintTop_toBottomOf="@id/weightTitle"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/weight_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/weight_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_icon"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/waterCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weightCard"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:elevation="@dimen/fiveDp"
+                    app:cardCornerRadius="@dimen/fiveDp"
+                    app:cardElevation="@dimen/tenDp"
+                    android:layout_margin="@dimen/tenDp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginBottom="@dimen/fiftyDp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/tenDp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:id="@+id/water_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_water"
+                            android:background="@drawable/card_bg"
+                            android:padding="@dimen/twelveDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/waterTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Log some water"
+                            app:layout_constraintTop_toTopOf="@id/water_icon"
+                            app:layout_constraintStart_toEndOf="@id/water_icon"
+                            android:textSize="@dimen/fontSeventeenSp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1,893 ml left"
+                            app:layout_constraintBottom_toBottomOf="@id/water_icon"
+                            app:layout_constraintStart_toEndOf="@id/water_icon"
+                            android:textSize="@dimen/fontFifteenSp"
+                            app:layout_constraintTop_toBottomOf="@id/waterTitle"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/water_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/water_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_icon"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/foodCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/waterCard"
+                    android:layout_marginTop="@dimen/twentyDp"
+                    android:elevation="@dimen/fiveDp"
+                    app:cardCornerRadius="@dimen/fiveDp"
+                    app:cardElevation="@dimen/tenDp"
+                    android:layout_margin="@dimen/tenDp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/tenDp"
+                        android:background="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:id="@+id/food_icon"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_apple_icon"
+                            android:background="@drawable/card_bg"
+                            android:padding="@dimen/twelveDp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/foodTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start loggin your food"
+                            app:layout_constraintTop_toTopOf="@id/food_icon"
+                            app:layout_constraintStart_toEndOf="@id/food_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/food_icon"
+                            android:textSize="@dimen/fontSeventeenSp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="@dimen/twentyDp"/>
+
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toTopOf="@id/food_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/food_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/ic_add_icon"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

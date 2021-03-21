@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zeroDp">0dp</dimen>
+    <dimen name="tenDp">10dp</dimen>
+    <dimen name="fontEleven">11sp</dimen>
+    <dimen name="fontTen">10sp</dimen>
+    <dimen name="fontNine">9sp</dimen>
+    <dimen name="headerTitleSize">16sp</dimen>
+    <dimen name="fiveDp">5dp</dimen>
+    <dimen name="twentyDp">20dp</dimen>
+    <dimen name="fontTwelve">12sp</dimen>
+    <dimen name="fontTwentySp">25sp</dimen>
+    <dimen name="twentyFiveDp">25dp</dimen>
+    <dimen name="thirtyDp">30dp</dimen>
+    <dimen name="fiftyDp">50dp</dimen>
+    <dimen name="fontSeventeenSp">17sp</dimen>
+    <dimen name="fontFifteenSp">15sp</dimen>
+    <dimen name="twelveDp">12dp</dimen>
+    <dimen name="fifteenDp">15dp</dimen>
+</resources>

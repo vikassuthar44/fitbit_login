@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_screen_bg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/twentyDp"
+            android:id="@+id/tvLetStart"
+            android:text="@string/let_s_get_started"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontTwentySp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emailView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLetStart"
+            android:background="#047782"
+            android:padding="@dimen/tenDp"
+            android:layout_marginTop="@dimen/twentyDp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/twentyDp"
+                android:text="@string/email"
+                android:textSize="@dimen/fontSeventeenSp"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etEmailId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/tvEmail"
+                app:layout_constraintTop_toTopOf="@id/tvEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/twentyDp"
+                app:layout_constraintBottom_toBottomOf="@id/tvEmail"
+                android:background="@null"
+                android:textColor="@color/white"
+                android:inputType="textEmailAddress"
+                android:hint="@string/enter_email_id_here"
+                android:layout_marginStart="@dimen/twentyDp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/passwordView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailView"
+            android:background="#047782"
+            android:padding="@dimen/tenDp"
+            android:layout_marginTop="@dimen/twentyDp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/twentyDp"
+                android:text="@string/password"
+                android:textSize="@dimen/fontSeventeenSp"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/tvPassword"
+                app:layout_constraintTop_toTopOf="@id/tvPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/twentyDp"
+                app:layout_constraintBottom_toBottomOf="@id/tvPassword"
+                android:background="@null"
+                android:textColor="@color/white"
+                android:inputType="textPassword"
+                android:hint="@string/enter_password_here"
+                android:layout_marginStart="@dimen/twentyDp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForgotPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordView"
+            android:layout_marginTop="@dimen/twentyDp"
+            android:text="@string/forgot_password"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSeventeenSp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvForgotPassword"
+            android:layout_margin="@dimen/thirtyDp"
+            android:text="@string/log_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

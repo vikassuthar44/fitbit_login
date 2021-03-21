@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/slider_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvSliderText"
+            app:cardCornerRadius="70dp"
+            android:background="@drawable/card_bg"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <ImageView
+                android:padding="@dimen/thirtyDp"
+                android:id="@+id/ivImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fitbit_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSliderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manage_weight"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontTwentySp"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageCardView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
